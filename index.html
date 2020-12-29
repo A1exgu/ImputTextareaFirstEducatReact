@@ -1,0 +1,43 @@
+import React from "react"; 
+import s from "./CreateNewDocument.module.scss" 
+import iconDoc from "../../../img/miniDocIcon.svg"
+
+const CreateNewDocument = () => {
+    return (
+        <div className={s.wrapper}>
+            {/* <!--Introduction--> */}
+            <div className={s.introText}>
+                <h5 className={s.preNameDoc}> Home &#183; Forum &#183; Introduction</h5>
+                <h2 className={s.nameDoc}>Introduction</h2>
+                {/* <!--alert message --> */}
+                <div className={s.alertTextBlock}>
+                    <label className={s.labelOne} for="">
+                        <div className={s.checkIcon}> &#10003;</div>
+                    </label>
+                    <div><span  className={s.alertText}>Doc successfully created!</span></div>
+                </div>
+            </div>
+            
+            {/* <!-- table of contents --> */}
+            <div className={s.docMessage}>
+                <img src={iconDoc} className={s.iconDoc}/><span className={s.docName}>Introduction</span>
+            </div>
+            {/* <!-- input --> */}
+            <div className={s.inputContainers}>
+                <div className={s.form}><input type="text" name="name" autocomplete="off" required /> 
+                    <label for="name" className={s.labelName}>
+                    </label>
+                </div>
+                {/* <!-- input name --> */}
+                <p className={s.menuEdit}>Menu <span className={s.spaceBetween}>.....</span> Edit</p>
+                {/* <!-- inputMessage --> */}
+                <div>
+                    <textarea className={s.inputMessage} name="comments" cols="34" rows="20" placeholder="Please, enter your message here"></textarea>
+                </div>
+                
+            </div>
+        </div>
+    );
+}
+
+export default CreateNewDocument;
