@@ -6,36 +6,32 @@ const CreateNewDocument = () => {
     return (
         <div className={s.wrapper}>
             {/* <!--Introduction--> */}
-            <div className={s.introText}>
-                <h5 className={s.preNameDoc}> Home &#183; Forum &#183; Introduction</h5>
-                <h2 className={s.nameDoc}>Introduction</h2>
-                {/* <!--alert message --> */}
-                <div className={s.alertTextBlock}>
-                    <label className={s.labelOne} for="">
-                        <div className={s.checkIcon}> &#10003;</div>
-                    </label>
-                    <div><span  className={s.alertText}>Doc successfully created!</span></div>
-                </div>
-            </div>
-            
-            {/* <!-- table of contents --> */}
-            <div className={s.docMessage}>
-                <img src={iconDoc} className={s.iconDoc}/><span className={s.docName}>Introduction</span>
-            </div>
-            {/* <!-- input --> */}
-            <div className={s.inputContainers}>
-                <div className={s.form}><input type="text" name="name" autocomplete="off" required /> 
-                    <label for="name" className={s.labelName}>
-                    </label>
-                </div>
-                {/* <!-- input name --> */}
-                <p className={s.menuEdit}>Menu <span className={s.spaceBetween}>.....</span> Edit</p>
-                {/* <!-- inputMessage --> */}
-                <div>
-                    <textarea className={s.inputMessage} name="comments" cols="34" rows="20" placeholder="Please, enter your message here"></textarea>
+            <div className={s.introWrapper}>
+                <h5> Home &#183; Forum &#183; Introduction</h5>
+                <h2>Introduction</h2>
+                <div className={s.alertBlock}>
+                    <div className={s.checkmark}><img src={iconCheckmark} alt={"Image description"}/></div>
+                    <div className={s.alertText}>Doc successfully created!</div> 
                 </div>
                 
+                <div className={s.docMsg}>
+                <img src={iconDoc} className={s.iconDoc} alt={"Image description"}/><span className={s.docName}>Document</span>
+                </div>
             </div>
+            {/* <!-- input name--> */}
+            <form className={s.formWrapper}>
+                <div className={s.formBlockOne}>
+                    <input type="text" name="name" autocomplete="off" placeholder="" required /> 
+                    <label for="name"></label>
+                </div>
+                <div className={s.formBlockTwo}>
+                    <div className={s.menu}>Menu</div>
+                    <div className={s.edit}> Edit</div>
+                </div>
+                <div className={s.formBlockThree}> 
+                    <textarea name="comments" cols="34" rows="20" placeholder="Text text"></textarea>
+                </div>
+            </form>
         </div>
     );
 }
